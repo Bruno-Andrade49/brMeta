@@ -1,9 +1,19 @@
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NotificationButton from '../NotificationButton';
 import './style.css'
 
 function SalesCard() {
+
+    const dateMin = new Date(new Date().setDate(new Date().getDate() - 365));
+    const max = new Date();
+
+
+    const [minDate, setMinDate] = useState(dateMin);
+    const [maxDate, setMaxDate] = useState(max);
+
+
     return (
         <>
             <div className="dsmeta-card">
@@ -11,16 +21,25 @@ function SalesCard() {
                 <div>
                     <div className="dsmeta-form-control-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={minDate}
+                            onChange={(date: Date) => {
+                                console.log(date.getDay())
+                                if (date.getFullYear() > maxDate.getFullYear()) {
+                                    alert("Não pode colocar uma data minima maior que a máxima!")
+                                } else {
+                                    setMinDate(date)
+                                }
+                            }}
                             className="dsmeta-form-control"
                             dateFormat="dd/MM/yyyy"
                         />
                     </div>
                     <div className="dsmeta-form-control-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={maxDate}
+                            onChange={(date: Date) => {
+                                setMaxDate(date)
+                            }}
                             className="dsmeta-form-control"
                             dateFormat="dd/MM/yyyy"
                         />
