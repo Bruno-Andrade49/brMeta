@@ -1,0 +1,8 @@
+package com.bruno.projetos.reactjava.dsmeta.brMeta.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class SaleService {
+
+}

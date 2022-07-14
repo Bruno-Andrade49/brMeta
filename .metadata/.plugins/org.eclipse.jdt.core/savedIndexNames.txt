@@ -71,7 +71,6 @@ INDEX VERSION 1.131+C:\Users\beman\VsCodeProjects\ProjetosGit\DSMeta\.metadata\.
 190371879.index
 3926332113.index
 4068602724.index
-516275.index
 422688946.index
 1966639893.index
 2280467190.index
