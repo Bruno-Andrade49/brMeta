@@ -1,0 +1,5 @@
+package com.bruno.projetos.reactjava.dsmeta.brMeta.entities;
+
+public class Sale {
+
+}
