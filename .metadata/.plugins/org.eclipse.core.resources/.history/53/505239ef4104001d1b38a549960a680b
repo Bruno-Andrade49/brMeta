@@ -1,0 +1,21 @@
+package com.bruno.projetos.reactjava.dsmeta.brMeta.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.bruno.projetos.reactjava.dsmeta.brMeta.entities.Sale;
+import com.bruno.projetos.reactjava.dsmeta.brMeta.repositories.SaleRepository;
+
+@Service
+public class SaleService {
+	
+	@Autowired
+	private SaleRepository saleRepository;
+	
+	public Page<Sale> findSales(Pageable pageable) {
+		return saleRepository.findAll(pageable);
+	}
+
+}
